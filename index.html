@@ -4,47 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carlos Londoño - Full Stack Developer</title>
+  <!-- Google Fonts Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Lato', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
-      color: #333;
+      background: #f3f4f6;
+      color: #1f2937;
     }
     header {
-      background: linear-gradient(90deg, #007bff, #6610f2);
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
       color: #fff;
-      padding: 2rem;
+      padding: 3rem 1rem;
       text-align: center;
+      position: relative;
+    }
+    header img.profile {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
     header h1 {
       margin: 0;
       font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -1px;
     }
     header p {
       margin-top: 0.5rem;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      font-weight: 400;
     }
     nav {
-      background: #343a40;
-      padding: 0.8rem 1rem;
+      background: #111827;
+      padding: 0.8rem;
       text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     nav a {
-      color: #fff;
+      color: #f9fafb;
       text-decoration: none;
       margin: 0 1rem;
-      font-weight: bold;
+      font-weight: 500;
+      font-size: 1rem;
       transition: color 0.3s;
     }
     nav a:hover {
-      color: #ffc107;
+      color: #fbbf24;
     }
     section {
-      padding: 2rem;
-      max-width: 1000px;
+      padding: 3rem 1rem;
+      max-width: 1100px;
       margin: auto;
       animation: fadeIn 1s ease-in;
     }
@@ -53,127 +71,177 @@
       to {opacity: 1;}
     }
     h2 {
-      border-bottom: 3px solid #007bff;
+      font-size: 2rem;
+      border-bottom: 3px solid #3b82f6;
       padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
     }
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
     }
     .project {
-      background: #fff;
-      padding: 1rem;
+      background: #ffffff;
+      padding: 1.5rem;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
       text-align: center;
     }
     .project:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
     .project img {
       max-width: 100%;
       border-radius: 8px;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .slider {
+      position: relative;
+      max-width: 100%;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 300%;
+    }
+    .slides img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+      height: 400px;
     }
     footer {
       text-align: center;
-      background: #343a40;
-      color: #fff;
-      padding: 1.5rem;
-      margin-top: 2rem;
+      background: #111827;
+      color: #f9fafb;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      font-weight: 300;
     }
     a.btn {
       display: inline-block;
-      margin-top: 0.8rem;
-      padding: 0.5rem 1rem;
-      background: #28a745;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #10b981;
       color: #fff;
       text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
       transition: background 0.3s;
     }
     a.btn:hover {
-      background: #218838;
+      background: #059669;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>✨ Carlos Londoño ✨</h1>
-    <p>Full Stack Developer | 🎸 Guitarist | 🏍️ Motorbike Traveler | 🎾 Tennis Player</p>
-  </header>
+<header>
+  <img class="profile" src="media/profile-pic.png" alt="Profile Photo">
+  <h1>Carlos Londoño</h1>
+  <p>Full Stack Developer | 🎸 Guitarist | 🏍️ Motorbike Traveler | 🎾 Tennis Player</p>
+</header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <section id="about">
-    <h2>🌍 About Me</h2>
-    <p>I’m a proficient and efficient full stack developer with 7+ years of experience in front-end and back-end technologies. I work with Python, Django, Django Rest Framework, Golang, React, Angular, and have strong expertise with SQL and NoSQL databases. I’ve been deeply involved with Docker, Kubernetes, CI/CD pipelines, and unit testing. When I’m not coding, I love playing guitar, traveling on my motorcycle, and enjoying tennis matches.</p>
-  </section>
 
-  <section id="experience">
-    <h2>💼 Work Experience</h2>
-    <p><strong>Opolis (Oct 2023 - Present)</strong> – Full Stack Developer<br>Back and front development using Django, Django Rest Framework, Golang, and React. Responsible for creating, migrating and maintaining client and admin platforms. Experience with Docker, Kubernetes, CI/CD, and unit testing.</p>
-    <p><strong>Falabella Bank (Chile)</strong> – Full Stack Developer & Team Leader<br>Designed and developed VISA dispute management solutions using GoKit Microservices, Angular, MongoDB, unit tests, CI/CD, Docker, and Kubernetes.</p>
-    <p><strong>Bundle Data NL</strong> – Full Stack Developer<br>Architecture definitions and development with Django, DRF, GCP integrations, and POS services. Front-end development with VueJS and jQuery.</p>
-    <p><strong>Facturedo SA</strong> – Full Stack Developer<br>Backend development with Django and DRF. Web and mobile development using Angular and Ionic.</p>
-    <p><strong>Bancolombia SA</strong> – Software Engineer<br>Application-level architecture, DDD, training in unit tests, and support in IT communities.</p>
-    <p><strong>InOut Delivery</strong> – Software Developer<br>Developed the BRAIN project for restaurant platforms (PHP, TotalJS, VueJS).</p>
-    <p><strong>Ikono Telecomunicaciones</strong> – Software Developer<br>Web development of Callzi platform using Python, Twisted, Django, DRF, Postgresql, AngularJS, NodeJS.</p>
-  </section>
+<section id="about">
+  <h2>🌍 About Me</h2>
+  <p>I’m a proficient and efficient full stack developer with 7+ years of experience in front-end and back-end technologies. I work with Python, Django, Django Rest Framework, Golang, React, Angular, and have strong expertise with SQL and NoSQL databases. I’ve been deeply involved with Docker, Kubernetes, CI/CD pipelines, and unit testing. When I’m not coding, I love playing guitar, traveling on my motorcycle, and enjoying tennis matches.</p>
+</section>
 
-  <section id="projects">
-    <h2>🚀 Featured Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <img src="https://opolis.co/images/opolis-logo.png" alt="Opolis Logo">
-        <h3>Opolis Platform</h3>
-        <p>Development and maintenance of client and admin platforms using Django, DRF, Golang, and React, deployed on Kubernetes with CI/CD pipelines.</p>
-        <a class="btn" href="https://opolis.co" target="_blank">Visit Opolis</a>
-      </div>
-      <div class="project">
-        <img src="https://boosterdata.ai/images/logo.png" alt="Booster Data Logo">
-        <h3>Booster Data Cloud Infrastructure</h3>
-        <p>Implementation of Kubernetes-based infrastructure, CI/CD workflows, Vault for secrets management, and multi-environment deployments.</p>
-        <a class="btn" href="https://boosterdata.ai" target="_blank">Visit Booster Data</a>
-      </div>
-      <div class="project">
-        <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="Visa Icon">
-        <h3>Visa Dispute Manager</h3>
-        <p>Solution for VISA disputes in Falabella Bank using GoKit, Angular, and Kubernetes.</p>
-        <a class="btn" href="https://github.com/caallondono" target="_blank">View on GitHub</a>
-      </div>
-      <div class="project">
-        <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="API Icon">
-        <h3>POS Integration API</h3>
-        <p>API built with Django/DRF integrating WooCommerce and Shopify services.</p>
-        <a class="btn" href="https://github.com/caallondono" target="_blank">View on GitHub</a>
-      </div>
-      <div class="project">
-        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png" alt="Restaurant Icon">
-        <h3>Restaurant Management Platform</h3>
-        <p>BRAIN project core system for online sales, marketing, and statistics (PHP, TotalJS, VueJS).</p>
-        <a class="btn" href="https://github.com/caallondono" target="_blank">View on GitHub</a>
-      </div>
+<section id="experience">
+  <h2>💼 Work Experience</h2>
+  <p><strong>Opolis (Oct 2023 - Present)</strong> – Full Stack Developer<br>Back and front development using Django, Django Rest Framework, Golang, and React. Responsible for creating, migrating and maintaining client and admin platforms. Experience with Docker, Kubernetes, CI/CD, and unit testing.</p>
+  <p><strong>Falabella Bank (Chile)</strong> – Full Stack Developer & Team Leader<br>Designed and developed VISA dispute management solutions using GoKit Microservices, Angular, MongoDB, unit tests, CI/CD, Docker, and Kubernetes.</p>
+  <p><strong>Bundle Data NL</strong> – Full Stack Developer<br>Architecture definitions and development with Django, DRF, GCP integrations, and POS services. Front-end development with VueJS and jQuery.</p>
+  <p><strong>Facturedo SA</strong> – Full Stack Developer<br>Backend development with Django and DRF. Web and mobile development using Angular and Ionic.</p>
+  <p><strong>Bancolombia SA</strong> – Software Engineer<br>Application-level architecture, DDD, training in unit tests, and support in IT communities.</p>
+  <p><strong>InOut Delivery</strong> – Software Developer<br>Developed the BRAIN project for restaurant platforms (PHP, TotalJS, VueJS).</p>
+  <p><strong>Ikono Telecomunicaciones</strong> – Software Developer<br>Web development of Callzi platform using Python, Twisted, Django, DRF, Postgresql, AngularJS, NodeJS.</p>
+</section>
+
+<section id="projects">
+  <h2>🚀 Featured Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <img src="https://opolis.co/images/opolis-logo.png" alt="Opolis Logo">
+      <h3>Opolis Platform</h3>
+      <p>Development and maintenance of client and admin platforms using Django, DRF, Golang, and React, deployed on Kubernetes with CI/CD pipelines.</p>
+      <a class="btn" href="https://opolis.co" target="_blank">Visit Opolis</a>
     </div>
-  </section>
+    <div class="project">
+      <img src="https://boosterdata.ai/images/logo.png" alt="Booster Data Logo">
+      <h3>Booster Data Cloud Infrastructure</h3>
+      <p>Implementation of Kubernetes-based infrastructure, CI/CD workflows, Vault for secrets management, and multi-environment deployments.</p>
+      <a class="btn" href="https://boosterdata.ai" target="_blank">Visit Booster Data</a>
+    </div>
+    <div class="project">
+      <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="Visa Icon">
+      <h3>Visa Dispute Manager</h3>
+      <p>Solution for VISA disputes in Falabella Bank using GoKit, Angular, and Kubernetes.</p>
+      <a class="btn" href="https://github.com/caallondono" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="API Icon">
+      <h3>POS Integration API</h3>
+      <p>API built with Django/DRF integrating WooCommerce and Shopify services.</p>
+      <a class="btn" href="https://github.com/caallondono" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <img src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png" alt="Restaurant Icon">
+      <h3>Restaurant Management Platform</h3>
+      <p>BRAIN project core system for online sales, marketing, and statistics (PHP, TotalJS, VueJS).</p>
+      <a class="btn" href="https://github.com/caallondono" target="_blank">View on GitHub</a>
+    </div>
+  </div>
+</section>
 
-  <section id="contact">
-    <h2>📩 Contact</h2>
-    <p>Feel free to reach out! Find me on <a href="https://github.com/caallondono" target="_blank">GitHub</a> or <a href="https://www.linkedin.com/in/carlos-londono/" target="_blank">LinkedIn</a>.</p>
-    <p>Email: <a href="mailto:carlos.londo.san@gmail.com">carlos.londo.san@gmail.com</a></p>
-  </section>
+<section id="gallery">
+  <h2>📸 Gallery</h2>
+  <div class="slider">
+    <div class="slides" id="slides">
+      <img src="https://placehold.co/1200x400?text=Moto+Trip+1" alt="Moto Trip 1">
+      <img src="https://placehold.co/1200x400?text=Coding+Session" alt="Coding Session">
+      <img src="https://placehold.co/1200x400?text=On+Stage+Guitar" alt="On Stage Guitar">
+    </div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 Carlos Londoño. All rights reserved.
-  </footer>
+<section id="contact">
+  <h2>📩 Contact</h2>
+  <p>Feel free to reach out! Find me on <a href="https://github.com/caallondono" target="_blank">GitHub</a> or <a href="https://www.linkedin.com/in/carlos-londono/" target="_blank">LinkedIn</a>.</p>
+  <p>Email: <a href="mailto:carlos.londo.san@gmail.com">carlos.londo.san@gmail.com</a></p>
+</section>
+
+<footer>
+  &copy; 2025 Carlos Londoño. All rights reserved.
+</footer>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.getElementById('slides');
+  if(slides){
+    const totalSlides = slides.children.length;
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }, 3000);
+  }
+</script>
 </body>
 </html>
