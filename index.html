@@ -6,80 +6,105 @@
   <title>Carlos Londoño - Full Stack Developer</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f8f9fa;
+      background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
       color: #333;
     }
     header {
-      background: #222;
+      background: linear-gradient(90deg, #007bff, #6610f2);
       color: #fff;
       padding: 2rem;
       text-align: center;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
     header p {
       margin-top: 0.5rem;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
     nav {
-      background: #444;
-      padding: 0.5rem 1rem;
+      background: #343a40;
+      padding: 0.8rem 1rem;
       text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
     nav a {
       color: #fff;
       text-decoration: none;
       margin: 0 1rem;
       font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffc107;
     }
     section {
       padding: 2rem;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
     h2 {
-      border-bottom: 2px solid #ddd;
+      border-bottom: 3px solid #007bff;
       padding-bottom: 0.5rem;
     }
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
       margin-top: 1rem;
     }
     .project {
       background: #fff;
       padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+    }
+    .project img {
+      max-width: 100%;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 0.5rem;
     }
     footer {
       text-align: center;
-      background: #222;
+      background: #343a40;
       color: #fff;
-      padding: 1rem;
+      padding: 1.5rem;
       margin-top: 2rem;
     }
     a.btn {
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 0.8rem;
       padding: 0.5rem 1rem;
-      background: #007bff;
+      background: #28a745;
       color: #fff;
       text-decoration: none;
       border-radius: 4px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    a.btn:hover {
+      background: #218838;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Carlos Londoño</h1>
-    <p>Full Stack Developer | Guitarist | Motorbike Traveler | Tennis Player</p>
+    <h1>✨ Carlos Londoño ✨</h1>
+    <p>Full Stack Developer | 🎸 Guitarist | 🏍️ Motorbike Traveler | 🎾 Tennis Player</p>
   </header>
 
   <nav>
@@ -109,26 +134,31 @@
     <h2>🚀 Featured Projects</h2>
     <div class="projects">
       <div class="project">
+        <img src="https://opolis.co/images/opolis-logo.png" alt="Opolis Logo">
         <h3>Opolis Platform</h3>
         <p>Development and maintenance of client and admin platforms using Django, DRF, Golang, and React, deployed on Kubernetes with CI/CD pipelines.</p>
         <a class="btn" href="https://opolis.co" target="_blank">Visit Opolis</a>
       </div>
       <div class="project">
+        <img src="https://boosterdata.ai/images/logo.png" alt="Booster Data Logo">
         <h3>Booster Data Cloud Infrastructure</h3>
         <p>Implementation of Kubernetes-based infrastructure, CI/CD workflows, Vault for secrets management, and multi-environment deployments.</p>
         <a class="btn" href="https://boosterdata.ai" target="_blank">Visit Booster Data</a>
       </div>
       <div class="project">
+        <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="Visa Icon">
         <h3>Visa Dispute Manager</h3>
         <p>Solution for VISA disputes in Falabella Bank using GoKit, Angular, and Kubernetes.</p>
         <a class="btn" href="https://github.com/caallondono" target="_blank">View on GitHub</a>
       </div>
       <div class="project">
+        <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="API Icon">
         <h3>POS Integration API</h3>
         <p>API built with Django/DRF integrating WooCommerce and Shopify services.</p>
         <a class="btn" href="https://github.com/caallondono" target="_blank">View on GitHub</a>
       </div>
       <div class="project">
+        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png" alt="Restaurant Icon">
         <h3>Restaurant Management Platform</h3>
         <p>BRAIN project core system for online sales, marketing, and statistics (PHP, TotalJS, VueJS).</p>
         <a class="btn" href="https://github.com/caallondono" target="_blank">View on GitHub</a>
