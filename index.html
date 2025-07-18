@@ -4,18 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carlos Londoño - Full Stack Developer</title>
-  <!-- Google Fonts Montserrat -->
+  <!-- Favicon personalizado -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <!-- Google Fonts Lato -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-dark: #0a2239;
+      --primary: #176087;
+      --secondary: #1d84b5;
+      --accent: #53a2be;
+      --background-dark: #132e32;
+    }
     body {
       font-family: 'Lato', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f3f4f6;
-      color: #1f2937;
+      /*background: var(--background-dark);*/
+      color: #272727;
     }
     header {
-      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
       color: #fff;
       padding: 3rem 1rem;
       text-align: center;
@@ -33,16 +42,21 @@
     header h1 {
       margin: 0;
       font-size: 3rem;
-      font-weight: 700;
+      font-weight: 900;
       letter-spacing: -1px;
     }
-    header p {
+    header .title {
       margin-top: 0.5rem;
-      font-size: 1.2rem;
+      margin-bottom: 0;
+      font-size: 1.5rem;
       font-weight: 400;
     }
+    header .sub-title {
+      margin-top: 0.7rem;
+      font-size: 0.9rem;
+    }
     nav {
-      background: #111827;
+      background: var(--primary-dark);
       padding: 0.8rem;
       text-align: center;
       position: sticky;
@@ -53,12 +67,12 @@
       color: #f9fafb;
       text-decoration: none;
       margin: 0 1rem;
-      font-weight: 500;
+      font-weight: 700;
       font-size: 1rem;
       transition: color 0.3s;
     }
     nav a:hover {
-      color: #fbbf24;
+      color: var(--accent);
     }
     section {
       padding: 3rem 1rem;
@@ -72,10 +86,10 @@
     }
     h2 {
       font-size: 2rem;
-      border-bottom: 3px solid #3b82f6;
+      border-bottom: 3px solid var(--secondary);
       padding-bottom: 0.5rem;
       margin-bottom: 1.5rem;
-      font-weight: 600;
+      font-weight: 700;
     }
     .projects {
       display: grid;
@@ -84,18 +98,19 @@
     }
     .project {
       background: #ffffff;
+      color: #1f2937;
       padding: 1.5rem;
       border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
       text-align: center;
     }
     .project:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
     .project img {
-      max-width: 100%;
+      max-width: 50%;
       border-radius: 8px;
       margin-bottom: 0.8rem;
     }
@@ -120,7 +135,7 @@
     }
     footer {
       text-align: center;
-      background: #111827;
+      background: var(--primary-dark);
       color: #f9fafb;
       padding: 2rem 1rem;
       margin-top: 3rem;
@@ -130,16 +145,16 @@
       display: inline-block;
       margin-top: 1rem;
       padding: 0.6rem 1.2rem;
-      background: #10b981;
+      background: var(--secondary);
       color: #fff;
       text-decoration: none;
       border-radius: 6px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.95rem;
       transition: background 0.3s;
     }
     a.btn:hover {
-      background: #059669;
+      background: var(--accent);
     }
   </style>
 </head>
@@ -147,7 +162,8 @@
 <header>
   <img class="profile" src="media/profile-pic.webp" alt="Profile Photo">
   <h1>Carlos Londoño</h1>
-  <p>Full Stack Developer | 🎸 Guitarist | 🏍️ Motorbike Traveler | 🎾 Tennis Player</p>
+  <p class="title">Full Stack Developer</p>
+  <p class="sub-title">🎸 Guitarist | 🏍️ Motorbike Traveler | 🎾 Tennis Player</p>
 </header>
 
 <nav>
@@ -179,7 +195,7 @@
   <h2>🚀 Featured Projects</h2>
   <div class="projects">
     <div class="project">
-      <img src="https://opolis.co/images/opolis-logo.png" alt="Opolis Logo">
+      <img src="media/opolis.webp" alt="Opolis Logo">
       <h3>Opolis Platform</h3>
       <p>Development and maintenance of client and admin platforms using Django, DRF, Golang, and React, deployed on Kubernetes with CI/CD pipelines.</p>
       <a class="btn" href="https://opolis.co" target="_blank">Visit Opolis</a>
@@ -191,19 +207,19 @@
       <a class="btn" href="https://boosterdata.ai" target="_blank">Visit Booster Data</a>
     </div>
     <div class="project">
-      <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="Visa Icon">
+      <img src="media/visa-logo.jpg" alt="Visa Icon">
       <h3>Visa Dispute Manager</h3>
       <p>Solution for VISA disputes in Falabella Bank using GoKit, Angular, and Kubernetes.</p>
       <a class="btn" href="https://github.com/caallondono" target="_blank">View on GitHub</a>
     </div>
     <div class="project">
-      <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="API Icon">
+      <img src="media/pos.webp" alt="API Icon">
       <h3>POS Integration API</h3>
       <p>API built with Django/DRF integrating WooCommerce and Shopify services.</p>
       <a class="btn" href="https://github.com/caallondono" target="_blank">View on GitHub</a>
     </div>
     <div class="project">
-      <img src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png" alt="Restaurant Icon">
+      <img src="media/delivery.webp" alt="Restaurant Icon">
       <h3>Restaurant Management Platform</h3>
       <p>BRAIN project core system for online sales, marketing, and statistics (PHP, TotalJS, VueJS).</p>
       <a class="btn" href="https://github.com/caallondono" target="_blank">View on GitHub</a>
